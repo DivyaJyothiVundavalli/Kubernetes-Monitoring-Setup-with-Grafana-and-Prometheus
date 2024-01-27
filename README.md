@@ -3,6 +3,7 @@
 Welcome to the documentation for setting up a comprehensive monitoring system for your Kubernetes environment using Grafana and Prometheus. This guide will walk you through the process of configuring, deploying, and managing the monitoring stack to gain valuable insights into the health and performance of your Kubernetes clusters and applications.
 
 **Why Monitoring Matters**
+
 Monitoring is a crucial aspect of maintaining the reliability, availability, and performance of your applications and infrastructure. In a dynamic and containerized environment like Kubernetes, understanding the behavior of your applications and clusters is essential for effective resource utilization, troubleshooting, and ensuring a seamless user experience.
 
 **Key Benefits of Monitoring:**
