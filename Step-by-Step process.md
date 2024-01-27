@@ -10,7 +10,7 @@
 
 **6. Install prometheus using Helm:** 
 
-**Add helm repo:**Before installing Prometheus using Helm, you need to add the Prometheus Helm chart repository.
+**Add helm repo:** Before installing Prometheus using Helm, you need to add the Prometheus Helm chart repository.
 
 `helm repo add prometheus-community https://prometheus-community.github.io/helm-charts`
 
@@ -32,3 +32,46 @@ This is required to access prometheus-server using your browser.
 This command creates a NodePort service named "prometheus-server-ext" that exposes the Prometheus server on a specific port.
 
 **Access Prometheus Web UI**
+
+After exposing the service, you can access the Prometheus web UI using the NodePort.
+
+i. Get the NodePort assigned to the Prometheus service:
+
+`kubectl get svc prometheus-server-ext`
+Snap:
+
+ii. Get the minikube ip address using
+
+`minikube ip`
+
+Snap:
+
+Access Prometheus in your web browser using the NodePort. For example:
+
+`http://<Minikube_IP>:<NodePort>`
+
+Snap:
+
+
+**7. Install Grafana Using Helm:** processing is same as prometheus installation
+
+**Add Helm Repository**
+
+`helm repo add grafana https://grafana.github.io/helm-charts`
+
+**Update Helm Repository**
+
+`helm repo update`
+
+**Install Grafana**
+`helm install grafana grafana/grafana`
+
+**Expose Grafana Service**
+`kubectl expose service grafana --type=NodePort --target-port=3000 --name=grafana-ext`
+snap:
+
+**Access Grafana Web UI**
+
+
+****
+
