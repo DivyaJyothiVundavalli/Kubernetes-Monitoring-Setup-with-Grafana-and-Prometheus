@@ -47,7 +47,7 @@
   
   `kubectl get svc prometheus-server-ext`
   
-  Snap:
+  [Snap:](E:\WorkPlace\k8\Projects\Kubernetes monitoring setup\Kubernetes-Monitoring-Setup-with-Grafana-and-Prometheus\Snaps\prometheus external)
   
   ii. Get the minikube ip address using
   
