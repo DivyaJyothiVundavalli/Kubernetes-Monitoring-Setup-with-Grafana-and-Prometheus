@@ -1,17 +1,21 @@
 # Step by Step Process
 
-**1. Install a Virtual Machine Manager:** such as: Docker, QEMU, Hyperkit, Hyper-V, KVM, Parallels, Podman, VirtualBox, or VMware Fusion/Workstation
+**Install a Virtual Machine Manager:** 
+---
+>such as: Docker, QEMU, Hyperkit, Hyper-V, KVM, Parallels, Podman, VirtualBox, or VMware Fusion/Workstation
 
-**2.** [**Install Minikube:**](https://bit.ly/38bLcJy)
+[**Install Minikube**](https://bit.ly/38bLcJy)
+---
+[**Install Kubectl**](https://bit.ly/32bSI2Z)
+---
+[**Install Helm**](https://github.com/helm/helm/releases)
+---
+**Set Environment Variables:** 
+---
+>Add above four paths in env variables and restart the terminal
 
-**3.** [**Install Kubectl:**](https://bit.ly/32bSI2Z)
 
-**4.** [**Install Helm:**](https://github.com/helm/helm/releases)
-
-**5. Set Environment Variables:** Add above four paths in env variables and restart the terminal
-
-
-**6. Install prometheus using Helm:** 
+**Install prometheus using Helm:** 
 ---
  **Add helm repo:** Before installing Prometheus using Helm, you need to add the Prometheus Helm chart repository.
 
@@ -35,6 +39,7 @@
   >This command creates a NodePort service named "prometheus-server-ext" that exposes the Prometheus server on a specific port.
   
   **Access Prometheus Web UI**
+  ---
   
   After exposing the service, you can access the Prometheus web UI using the NodePort.
   
@@ -57,7 +62,7 @@
   Snap:
 
 
-**7. Install Grafana Using Helm:** processing is same as prometheus installation
+**Install Grafana Using Helm:** processing is same as prometheus installation
 ---
 **Add Helm Repository**
 
@@ -129,6 +134,40 @@ ii. Provide the Dashboard ID (e.g., 3662) in the "Grafana.com Dashboard" field.
 
 iii. Click on the "Load" button to fetch the details of the dashboard.
 
+
+To view Metric in web:
+--
+Expose the prometheus-kube-state-metrics service and access it in Web
+
+snap:
+
+>Remember that exposing services via NodePort might not be suitable for production environments. In production, you might consider using LoadBalancer services or an Ingress controller for more advanced routing and load balancing.
+
+
+To add your application metrics to Prometheus static configurations
+---
+you need to ensure that your application exposes metrics in a format that Prometheus can scrape. The common format is the Prometheus exposition format, and your application should expose a /metrics endpoint by default.
+
+To add application-related monitoring in a Prometheus YAML file:
+---
+We have to update our application data in the promethes yaml file in configmaps
+snap:
+
+Sample:
+```
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'your-application'
+    static_configs:
+      - targets: ['your-application-service:your-application-port']
+    metrics_path: '/metrics'
+```
 
 
 
