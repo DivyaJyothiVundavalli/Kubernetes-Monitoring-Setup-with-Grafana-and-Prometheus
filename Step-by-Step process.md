@@ -100,6 +100,35 @@ Click on the "Log In" button.
 
 >After logging in, you may want to change the password for security reasons.
 
+**Add Prometheus Datasource**
+---
+i. Click on the "Add your first data source" or the "+" button to add a new datasource.
+
+ii. Choose "Prometheus" from the list of available data sources.
+
+iii. Configure Prometheus Datasource
+
+>**Name:** Give a name to your Prometheus datasource (e.g., Prometheus).
+
+>**HTTP:** Set the URL for your Prometheus server. 
+
+iv. Click the "Save & Test" button to save the Prometheus datasource configuration and test the connection.
+
+**Access Dashboards:**
+---
+i. In the Grafana sidebar, click on the "+" icon to open the "Create" menu.
+
+ii.Select "Dashboard" from the menu.
+
+**Import Dashboard:**
+---
+
+i.Click on the "Import" button.
+
+ii. Provide the Dashboard ID (e.g., 3662) in the "Grafana.com Dashboard" field.
+
+iii. Click on the "Load" button to fetch the details of the dashboard.
+
 
 
 
