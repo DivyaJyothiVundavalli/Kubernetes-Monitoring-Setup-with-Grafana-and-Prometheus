@@ -1,6 +1,7 @@
-Install a Virtual Machine Manager: such as: Docker, QEMU, Hyperkit, Hyper-V, KVM, Parallels, Podman, VirtualBox, or VMware Fusion/Workstation
+**Install a Virtual Machine Manager:** such as: Docker, QEMU, Hyperkit, Hyper-V, KVM, Parallels, Podman, VirtualBox, or VMware Fusion/Workstation
 
-Install Minikube: https://bit.ly/38bLcJy
+Install Minikube: [Link Text](https://bit.ly/38bLcJy)
+
 
 
 Follow the instructions on the Minikube installation page.
