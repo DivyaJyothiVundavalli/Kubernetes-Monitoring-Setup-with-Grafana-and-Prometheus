@@ -47,19 +47,22 @@
   
   `kubectl get svc prometheus-server-ext`
   
-  [Snap:](E:\WorkPlace\k8\Projects\Kubernetes monitoring setup\Kubernetes-Monitoring-Setup-with-Grafana-and-Prometheus\Snaps\prometheus external)
+ ![prometheus ext](https://github.com/DivyaJyothiVundavalli/Kubernetes-Monitoring-Setup-with-Grafana-and-Prometheus/blob/main/Snaps%20folder/prometheus%20external.PNG)
   
   ii. Get the minikube ip address using
   
   `minikube ip`
-  
-  Snap:
+
+   ![ip address](https://github.com/DivyaJyothiVundavalli/Kubernetes-Monitoring-Setup-with-Grafana-and-Prometheus/blob/main/Snaps%20folder/minikube%20ip%20address.PNG)
   
   Access Prometheus in your web browser using the NodePort. For example:
   
   `http://<Minikube_IP>:<NodePort>`
-  
-  Snap:
+  ![promethues web Access](https://github.com/DivyaJyothiVundavalli/Kubernetes-Monitoring-Setup-with-Grafana-and-Prometheus/blob/main/Snaps%20folder/prometheus%20UI.PNG)
+
+  Querying using Prometheus
+  ---
+  ![query](https://github.com/DivyaJyothiVundavalli/Kubernetes-Monitoring-Setup-with-Grafana-and-Prometheus/blob/main/Snaps%20folder/prometheus%20query.PNG)
 
 
 **Install Grafana Using Helm:** processing is same as prometheus installation
@@ -81,10 +84,11 @@
 
 `kubectl expose service grafana --type=NodePort --target-port=3000 --name=grafana-ext`
 
-snap:
+ ![grafana expose](https://github.com/DivyaJyothiVundavalli/Kubernetes-Monitoring-Setup-with-Grafana-and-Prometheus/blob/main/Snaps%20folder/grafana%20external%20service.PNG)
 
 **Access Grafana Web UI**
 
+![grafana login](https://github.com/DivyaJyothiVundavalli/Kubernetes-Monitoring-Setup-with-Grafana-and-Prometheus/blob/main/Snaps%20folder/garafana%20login.PNG)
 
 ****
 # Logging in to Grafana
@@ -135,12 +139,13 @@ ii. Provide the Dashboard ID (e.g., 3662) in the "Grafana.com Dashboard" field.
 
 iii. Click on the "Load" button to fetch the details of the dashboard.
 
+![dashboard](https://github.com/DivyaJyothiVundavalli/Kubernetes-Monitoring-Setup-with-Grafana-and-Prometheus/blob/main/Snaps%20folder/garafana%20dashoard.PNG)
 
 To view Metric in web:
 --
 Expose the prometheus-kube-state-metrics service and access it in Web
 
-snap:
+![Metrics](https://github.com/DivyaJyothiVundavalli/Kubernetes-Monitoring-Setup-with-Grafana-and-Prometheus/blob/main/Snaps%20folder/metrics.PNG)
 
 >Remember that exposing services via NodePort might not be suitable for production environments. In production, you might consider using LoadBalancer services or an Ingress controller for more advanced routing and load balancing.
 
@@ -152,7 +157,8 @@ you need to ensure that your application exposes metrics in a format that Promet
 To add application-related monitoring in a Prometheus YAML file:
 ---
 We have to update our application data in the promethes yaml file in configmaps
-snap:
+
+![configmap](https://github.com/DivyaJyothiVundavalli/Kubernetes-Monitoring-Setup-with-Grafana-and-Prometheus/blob/main/Snaps%20folder/configmap.PNG)
 
 Sample:
 ```
